@@ -19,9 +19,7 @@
 - [Additional details](#additional-details)
   - [How to run the project](#how-to-run-the-project)
   - [Live demo](#live-demo)
-- [About this template](#about-this-template)
-  - [Contributing](#contributing)
-  - [Versioning](#versioning)
+- [About this Project](#about-this-project)
   - [Authors](#authors)
   - [License](#license)
   - [Acknowledgments](#acknowledgments)
@@ -134,6 +132,14 @@ $ python app.py
 You can find a running system to test at...
 
 - https://farm-bora-frontend.18rsgxmzc56t.eu-gb.codeengine.appdomain.cloud/
+
+---
+
+## About this project
+
+### Authors
+
+- **Timothy Karani** - [c3n7](https://github.com/c3n7)
 
 ### License
 
