@@ -60,6 +60,12 @@ First, you upload an image of a plant leaf through our frontend. The AI model th
 
 ### Solution architecture
 
+The project consists of:
+
+- [A Backend](https://github.com/farm-bora/farm-bora-backend)
+- [A Frontend](https://github.com/farm-bora/farm-bora-frontend)
+- [The Model](https://github.com/farm-bora/farm-bora-backend)
+
 ![Solution Architecture](https://raw.githubusercontent.com/farm-bora/.github/main/profile/media/architecture.drawio.png)
 
 1. The user uploads an image of a plant leaf.
@@ -98,7 +104,14 @@ See below for our proposed schedule on next steps after Call for Code 2023 submi
 
 #### Frontend
 
-Clone the frontend then:
+Clone the frontend:
+
+```shell
+$ git clone https://github.com/farm-bora/farm-bora-frontend
+$ cd farm-bora-frontend
+```
+
+Install dependencies then run it
 
 ```shell
 $ npm ci
@@ -110,6 +123,13 @@ $ npm run dev
 Clone the backend then:
 
 ```shell
+$ git clone https://github.com/farm-bora/farm-bora-backend
+$ cd farm-bora-backend
+```
+
+Install dependencies then run it
+
+```shell
 $ python -m venv env
 $ source env/bin/activate
 $ pip install -r requirements.txt
@@ -119,6 +139,13 @@ $ python manage.py runserver
 #### AI Model
 
 Clone the model then:
+
+```shell
+$ git clone https://github.com/farm-bora/farm-bora-model
+$ cd farm-bora-model
+```
+
+Install dependencies then run it
 
 ```shell
 $ python -m venv env
