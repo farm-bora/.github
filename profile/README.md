@@ -1,10 +1,9 @@
-[![License](https://img.shields.io/badge/License-Apache2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0) [![Community](https://img.shields.io/badge/Join-Community-blue)](https://developer.ibm.com/callforcode/solutions/projects/get-started/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Static Badge](https://img.shields.io/badge/Frontend-Code_Engine-blue)](https://farm-bora-frontend.18rsgxmzc56t.eu-gb.codeengine.appdomain.cloud/)
+[![Static Badge](https://img.shields.io/badge/Backend-Code_Engine-blue)](https://farm-bora-backend.18rsgxmzc56t.eu-gb.codeengine.appdomain.cloud/api/schema/swagger)
+[![Static Badge](<https://img.shields.io/badge/Model_(Gradio)-Code_Engine-blue>)](https://farm-bora-model.18rsgxmzc56t.eu-gb.codeengine.appdomain.cloud/)
 
-_INSTRUCTIONS: This GitHub repository serves as a template you can use to create a new project for the [2023 Call for Code Global Challenge](https://developer.ibm.com/callforcode/global-challenge/). Use the **Use this template** button to create a new version of this repository and start entering content for your own Call for Code submission project. Make sure you have [registered for the 2023 Call for Code Global Challenge](https://developer.ibm.com/callforcode/global-challenge/register/) to access resources and full project submission instructions. Remove any "INSTRUCTIONS" sections when you are ready to submit your project._
-
-_New to Git and GitHub? This free online course will get you up to speed quickly: [Getting Started with Git and GitHub](https://www.coursera.org/learn/getting-started-with-git-and-github)_.
-
-# Replace this heading with your team/submission name
+# Farm Bora
 
 - [Project summary](#project-summary)
   - [The issue we are hoping to solve](#the-issue-we-are-hoping-to-solve)
@@ -27,113 +26,118 @@ _New to Git and GitHub? This free online course will get you up to speed quickly
   - [License](#license)
   - [Acknowledgments](#acknowledgments)
 
-_INSTRUCTIONS: Complete all required deliverable sections below._
-
 ## Project summary
 
 ### The issue we are hoping to solve
 
-REPLACE THIS SENTENCE with a short description, 2-3 sentences in length, of the specific sustainability problem your solution is meant to address.
+Plant diseases are a major threat to crop yield and food security. Farmers often struggle when trying identify diseases in their crops, leading to reduced yields and economic losses. Access to specialists who can do this diagnosis is limited especially in developing nations, which further aggravates this problem.
 
 ### How our technology solution can help
 
-REPLACE THIS SENTENCE with a short description of your team's solution, in about 10 words.
+FarmBora is a tool enables farmers to diagnose plant diseases from images while giving actionable insights.
 
 ### Our idea
 
-INSTRUCTIONS: Replace this paragraph with a longer description of your solution. In about 500 words, describe your solution in more detail. Include the real-world problem you identified, describe the technological solution you have created, and explain how it’s an improvement over existing solutions. You can supply additional documentation in this source code repository that you link to as well.
+#### How it works
 
-More detail is available in our [description document](./docs/DESCRIPTION.md).
+First, you upload an image of a plant leaf through our frontend. The AI model then gives predictions on what the leaf might have. The returned results are also clickable, leading you to detailed pages with information on how to deal with the predicted disease.
+
+#### Unique Value Proposition
+
+- The model has been trained on a dataset which has 14 plants and up to 26 diseases.
+- The train and test accuracies of the model are **95%** and **97%** respectively.
+- This performant model is exposed to users in a user friendly frontend which makes the model accessible.
+- FarmBora doesn't stop at diagnosis. It also provides actionable insights, suggesting remedies and treatment options for the detected diseases.
+- To make it even more accessible, we've developed an API that can be used to connect our AI model to a range of farming equipment and management systems, and this will form the basis for future work.
 
 ## Technology implementation
 
 ### IBM AI service(s) used
 
-_INSTRUCTIONS: Included here is a list of commonly used IBM AI services. Remove any services you did not use, or add others from the linked catalog not already listed here. Leave only those included in your solution code. Provide details on where and how you used each IBM AI service to help judges review your implementation. Remove these instructions._
-
-- [IBM Natural Language Understanding](https://cloud.ibm.com/catalog/services/natural-language-understanding) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
-- [Watson Assistant](https://cloud.ibm.com/catalog/services/watson-assistant) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
-- [Watson Discovery](https://cloud.ibm.com/catalog/services/watson-discovery) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
-- [Watson Speech to Text](https://cloud.ibm.com/catalog/services/speech-to-text) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
-- [Watson Text to Speech](https://cloud.ibm.com/catalog/services/text-to-speech) - WHERE AND HOW THIS IS USED IN OUR SOLUTION
-- List any additional [IBM AI services](https://cloud.ibm.com/catalog?category=ai#services) used or remove this line
+- [Watson Text to Speech](https://cloud.ibm.com/catalog/services/text-to-speech) - To convert the actionable insights from text format to audio format that a farmer can then play and listen to.
 
 ### Other IBM technology used
 
-INSTRUCTIONS: List any other IBM technology used in your solution and describe how each component was used. If you can provide links to/details on exactly where these were used in your code, that would help the judges review your submission.
+- [Code Engine](https://www.ibm.com/products/code-engine) - This hosts the frontend, the api backend, and the model.
 
 ### Solution architecture
 
-Diagram and step-by-step description of the flow of our solution:
+![Solution Architecture](./media/architecture.drawio.png)
 
-![Video transcription/translaftion app](https://developer.ibm.com/developer/tutorials/cfc-starter-kit-speech-to-text-app-example/images/cfc-covid19-remote-education-diagram-2.png)
-
-1. The user navigates to the site and uploads a video file.
-2. Watson Speech to Text processes the audio and extracts the text.
-3. Watson Translation (optionally) can translate the text to the desired language.
-4. The app stores the translated text as a document within Object Storage.
+1. The user uploads an image of a plant leaf.
+2. The frontend passes it to the backend which also passes it to the model.
+3. The returned predictions from the model are cleaned up and links to details of the diseases are added to the response by the **backend**.
+4. The prediction results are show to the user from the **frontend**.
 
 ## Presentation materials
 
-_INSTRUCTIONS: The following deliverables should be officially posted to your My Team > Submissions section of the [Call for Code Global Challenge resources site](https://cfc-prod.skillsnetwork.site/), but you can also include them here for completeness. Replace the examples seen here with your own deliverable links._
-
 ### Solution demo video
 
-[![Watch the video](https://raw.githubusercontent.com/Liquid-Prep/Liquid-Prep/main/images/readme/IBM-interview-video-image.png)](https://youtu.be/vOgCOoy_Bx0)
+[Click on the image below to play: ![Watch the video](./media/video-picture.png)](https://www.youtube.com/watch?v=qeEEyPRc_-0)
 
 ### Project development roadmap
 
 The project currently does the following things.
 
-- Feature 1
-- Feature 2
-- Feature 3
+- An image classification model has been trained
+- An API for accessing this model has been created
+- A frontend that exposes the above two has been created.
 
 In the future we plan to...
 
+- Add user authentication/authorization
+- Add OpenAI's ChatGPT through LangChain
+- Further improve the model's performance
+- Integrate the model into farm equipment
+
 See below for our proposed schedule on next steps after Call for Code 2023 submission.
 
-![Roadmap](./images/roadmap.jpg)
+![Roadmap](./media/roadmap.png)
 
 ## Additional details
 
-_INSTRUCTIONS: The following deliverables are suggested, but **optional**. Additional details like this can help the judges better review your solution. Remove any sections you are not using._
-
 ### How to run the project
 
-INSTRUCTIONS: In this section you add the instructions to run your project on your local machine for development and testing purposes. You can also add instructions on how to deploy the project in production.
+#### Frontend
+
+Clone the frontend then:
+
+```shell
+$ npm ci
+$ npm run dev
+```
+
+#### Backend
+
+Clone the backend then:
+
+```shell
+$ python -m venv env
+$ source env/bin/activate
+$ pip install -r requirements.txt
+$ python manage.py runserver
+```
+
+#### AI Model
+
+Clone the model then:
+
+```shell
+$ python -m venv env
+$ source env/bin/activate
+$ pip install -r requirements.txt
+$ python app.py
+```
 
 ### Live demo
 
 You can find a running system to test at...
 
-See our [description document](./docs/DESCRIPTION.md) for log in credentials.
-
----
-
-_INSTRUCTIONS: You can remove the below section from your specific project README._
-
-## About this template
-
-### Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
-
-### Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
-
-### Authors
-
-<a href="https://github.com/Call-for-Code/Project-Sample/graphs/contributors">
-  <img src="https://contributors-img.web.app/image?repo=Call-for-Code/Project-Sample" />
-</a>
-
-- **Billie Thompson** - _Initial work_ - [PurpleBooth](https://github.com/PurpleBooth)
+- https://farm-bora-frontend.18rsgxmzc56t.eu-gb.codeengine.appdomain.cloud/
 
 ### License
 
-This project is licensed under the Apache 2 License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ### Acknowledgments
 
