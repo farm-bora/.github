@@ -62,7 +62,7 @@ First, you upload an image of a plant leaf through our frontend. The AI model th
 
 ### Solution architecture
 
-![Solution Architecture](./media/architecture.drawio.png)
+![Solution Architecture](https://raw.githubusercontent.com/farm-bora/.github/main/profile/media/architecture.drawio.png)
 
 1. The user uploads an image of a plant leaf.
 2. The frontend passes it to the backend which also passes it to the model.
@@ -73,7 +73,7 @@ First, you upload an image of a plant leaf through our frontend. The AI model th
 
 ### Solution demo video
 
-[Click on the image below to play: ![Watch the video](./media/video-picture.png)](https://www.youtube.com/watch?v=qeEEyPRc_-0)
+[Click on the image below to play: ![Watch the video](https://raw.githubusercontent.com/farm-bora/.github/main/profile/media/video-picture.png)](https://www.youtube.com/watch?v=qeEEyPRc_-0)
 
 ### Project development roadmap
 
@@ -92,7 +92,7 @@ In the future we plan to...
 
 See below for our proposed schedule on next steps after Call for Code 2023 submission.
 
-![Roadmap](./media/roadmap.png)
+![Roadmap](https://raw.githubusercontent.com/farm-bora/.github/main/profile/media/roadmap.png)
 
 ## Additional details
 
